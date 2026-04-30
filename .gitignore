@@ -1,2 +1,8 @@
+# Java compilado
 *.class
+
+# Pasta de build
 bin/
+
+# VS Code (config local)
+.vscode/
