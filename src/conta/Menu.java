@@ -2,6 +2,8 @@ package conta;
 
 import java.util.Scanner;
 
+import conta.model.ContaCorrente;
+import conta.model.ContaPoupanca;
 import conta.util.Cores;
 
 public class Menu {
@@ -46,42 +48,55 @@ public class Menu {
 			switch (opcao) {
 				case 1:
 					System.out.println(Cores.TEXT_WHITE + "Criar Conta\n\n");
-				
-                    break;
+
+					ContaCorrente cc = new ContaCorrente(1, 123, 1, "Talita Santos", 1000.0f);
+					ContaPoupanca cp = new ContaPoupanca(2, 123, 2, "Talita Santos", 500.0f);
+
+					cc.visualizar();
+					cp.visualizar();
+
+					break;
+
 				case 2:
 					System.out.println(Cores.TEXT_WHITE + "Listar todas as Contas\n\n");
 
 					break;
+
 				case 3:
 					System.out.println(Cores.TEXT_WHITE + "Consultar dados da Conta - por número\n\n");
 
 					break;
+
 				case 4:
 					System.out.println(Cores.TEXT_WHITE + "Atualizar dados da Conta\n\n");
 
 					break;
+
 				case 5:
 					System.out.println(Cores.TEXT_WHITE + "Apagar a Conta\n\n");
 
 					break;
+
 				case 6:
 					System.out.println(Cores.TEXT_WHITE + "Saque\n\n");
 
 					break;
+
 				case 7:
 					System.out.println(Cores.TEXT_WHITE + "Depósito\n\n");
 
 					break;
+
 				case 8:
 					System.out.println(Cores.TEXT_WHITE + "Transferência entre Contas\n\n");
 
 					break;
+
 				default:
 					System.out.println(Cores.TEXT_RED_BOLD + "\nOpção Inválida!\n" + Cores.TEXT_RESET);
 					break;
 			}
 		}
-
 	}
 
 	public static void sobre() {
@@ -91,5 +106,4 @@ public class Menu {
 		System.out.println("github.com/talitatech");
 		System.out.println("*********************************************************");
 	}
-
 }
