@@ -38,4 +38,8 @@ public class Conta {
 		System.out.println("Titular: " + this.titular);
 		System.out.println("Saldo: R$ " + this.saldo);
 	}
+
+	public int getNumero() {
+		return numero;
+	}
 }
