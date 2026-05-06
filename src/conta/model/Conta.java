@@ -2,13 +2,19 @@ package conta.model;
 
 public class Conta {
 
+	// Atributos da conta
 	private int numero;
 	private int agencia;
 	private int tipo;
 	private String titular;
 	private float saldo;
 
+	/*
+	 * Método construtor responsável por inicializar
+	 * os dados da conta no momento da criação.
+	 */
 	public Conta(int numero, int agencia, int tipo, String titular, float saldo) {
+
 		this.numero = numero;
 		this.agencia = agencia;
 		this.tipo = tipo;
@@ -16,19 +22,26 @@ public class Conta {
 		this.saldo = saldo;
 	}
 
+	/*
+	 * Método responsável por exibir os dados da conta.
+	 */
 	public void visualizar() {
 
 		String tipoConta = "";
 
+		// Verifica o tipo da conta
 		switch (this.tipo) {
+
 			case 1:
 				tipoConta = "Conta Corrente";
 				break;
+
 			case 2:
 				tipoConta = "Conta Poupança";
 				break;
 		}
 
+		// Exibe os dados da conta
 		System.out.println("\n*****************************************************");
 		System.out.println("Dados da Conta:");
 		System.out.println("*****************************************************");
@@ -39,7 +52,51 @@ public class Conta {
 		System.out.println("Saldo: R$ " + this.saldo);
 	}
 
+	/*
+	 * Getter responsável por retornar o número da conta.
+	 */
 	public int getNumero() {
+
 		return numero;
+	}
+
+	/*****************************************************
+	 * FEATURE: Métodos Bancários
+	 *****************************************************/
+
+	/*
+	 * Método responsável por realizar saque da conta.
+	 * Primeiro verifica se existe saldo suficiente.
+	 */
+	public boolean sacar(float valor) {
+
+		if (this.saldo < valor) {
+
+			System.out.println("\nSaldo insuficiente!");
+
+			return false;
+		}
+
+		// Remove o valor do saldo
+		this.saldo -= valor;
+
+		return true;
+	}
+
+	/*
+	 * Método responsável por realizar depósito na conta.
+	 */
+	public void depositar(float valor) {
+
+		// Soma o valor ao saldo
+		this.saldo += valor;
+	}
+
+	/*
+	 * Getter responsável por retornar o saldo da conta.
+	 */
+	public float getSaldo() {
+
+		return saldo;
 	}
 }
