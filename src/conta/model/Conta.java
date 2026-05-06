@@ -67,9 +67,11 @@ public class Conta {
 	/*
 	 * Método responsável por realizar saque da conta.
 	 * Primeiro verifica se existe saldo suficiente.
+	 * Caso tenha saldo, o valor é removido da conta.
 	 */
 	public boolean sacar(float valor) {
 
+		// Verifica se o saldo é insuficiente
 		if (this.saldo < valor) {
 
 			System.out.println("\nSaldo insuficiente!");
@@ -77,7 +79,7 @@ public class Conta {
 			return false;
 		}
 
-		// Remove o valor do saldo
+		// Remove o valor do saldo da conta
 		this.saldo -= valor;
 
 		return true;
@@ -85,15 +87,16 @@ public class Conta {
 
 	/*
 	 * Método responsável por realizar depósito na conta.
+	 * O valor informado é somado ao saldo atual.
 	 */
 	public void depositar(float valor) {
 
-		// Soma o valor ao saldo
+		// Soma o valor ao saldo da conta
 		this.saldo += valor;
 	}
 
 	/*
-	 * Getter responsável por retornar o saldo da conta.
+	 * Getter responsável por retornar o saldo atual da conta.
 	 */
 	public float getSaldo() {
 

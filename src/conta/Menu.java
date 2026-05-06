@@ -11,7 +11,7 @@ public class Menu {
 
 	public static void main(String[] args) {
 
-		// Objeto responsável pela leitura de dados do teclado
+		// Objeto responsável pela leitura de dados digitados no teclado
 		Scanner leia = new Scanner(System.in);
 
 		// Instância da classe controller responsável pelas operações bancárias
@@ -22,7 +22,7 @@ public class Menu {
 		// Estrutura de repetição responsável por manter o menu em execução
 		while (true) {
 
-			// Exibição do menu principal
+			// Exibição do menu principal do sistema
 			System.out.println(Cores.TEXT_YELLOW + Cores.ANSI_BLACK_BACKGROUND
 					+ "*****************************************************");
 			System.out.println("                                                     ");
@@ -47,7 +47,7 @@ public class Menu {
 			// Recebe a opção digitada pelo usuário
 			opcao = leia.nextInt();
 
-			// Finaliza o sistema caso o usuário digite 0
+			// Encerra o sistema caso o usuário digite 0
 			if (opcao == 0) {
 
 				System.out.println(Cores.TEXT_WHITE_BOLD
@@ -91,7 +91,8 @@ public class Menu {
 
 				case 2:
 
-					System.out.println(Cores.TEXT_WHITE + "Listar todas as Contas\n\n");
+					System.out.println(Cores.TEXT_WHITE
+							+ "Listar todas as Contas\n\n");
 
 					// Lista todas as contas cadastradas
 					contas.listarTodas();
@@ -103,16 +104,17 @@ public class Menu {
 					System.out.println(Cores.TEXT_WHITE
 							+ "Consultar dados da Conta - por número\n\n");
 
-					// Busca uma conta pelo número
+					// Busca uma conta através do número
 					contas.procurarPorNumero(1);
 
 					break;
 
 				case 4:
 
-					System.out.println(Cores.TEXT_WHITE + "Atualizar dados da Conta\n\n");
+					System.out.println(Cores.TEXT_WHITE
+							+ "Atualizar dados da Conta\n\n");
 
-					// Atualiza os dados da conta existente
+					// Atualiza os dados de uma conta existente
 					ContaCorrente cc2 = new ContaCorrente(
 							1,
 							123,
@@ -126,9 +128,10 @@ public class Menu {
 
 				case 5:
 
-					System.out.println(Cores.TEXT_WHITE + "Apagar a Conta\n\n");
+					System.out.println(Cores.TEXT_WHITE
+							+ "Apagar a Conta\n\n");
 
-					// Remove a conta da lista
+					// Remove uma conta da lista
 					contas.deletar(2);
 
 					break;
@@ -139,7 +142,8 @@ public class Menu {
 
 				case 6:
 
-					System.out.println(Cores.TEXT_WHITE + "Saque\n\n");
+					System.out.println(Cores.TEXT_WHITE
+							+ "Saque\n\n");
 
 					// Realiza saque da conta
 					contas.sacar(1, 100.0f);
@@ -148,7 +152,8 @@ public class Menu {
 
 				case 7:
 
-					System.out.println(Cores.TEXT_WHITE + "Depósito\n\n");
+					System.out.println(Cores.TEXT_WHITE
+							+ "Depósito\n\n");
 
 					// Realiza depósito na conta
 					contas.depositar(1, 200.0f);
